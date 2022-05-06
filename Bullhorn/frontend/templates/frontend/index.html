@@ -13,8 +13,29 @@
     />
   </head>
   <body>
-    <div id="root">
-    </div>
+    <div>
+      {% if user.is_authenticated %}
+        <div id="root">
+        </div>
+      {% else %}
+        <nav>
+            <div>
+              {% if user.is_authenticated %}
+                  <span>Welcome, {{user}}</span>
+                  <a href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                  <a href="{% url 'signup' %}">Sign up</a>
+                  <a href="{% url 'login' %}">Login</a>
+              {% endif %}
+            </div>
+        </nav>
+        <main>
+          {% block content %}
+          {% endblock content %}
+        </main>
+      {% endif %}
+  </div>
+    
 
     <script src="{% static "frontend/main.js" %}"></script>
   </body>
