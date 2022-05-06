@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home'
+import * as Pages from './pages'
+
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <div id="app">
             <main>
               <Routes>
-                  <Route path='/' element={<Home />}/>
+                  <Route path='/' element={<Pages.Home />}/>
+                  <Route path='/profile' element={<Pages.Profile />}/>
               </Routes>
             </main>
       </div>
