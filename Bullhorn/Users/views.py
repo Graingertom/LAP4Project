@@ -9,7 +9,7 @@ def signup(req):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(req, f'Welcome, {username}!')
-            return redirect('User_Auth')
+            return redirect('users/login.html')
     else:
         form = UserSignupForm()
     data = {'form': form}
