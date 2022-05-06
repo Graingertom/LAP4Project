@@ -1,11 +1,10 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
 import base64
 
 # Create your models here.
 class Post(models.Model):
     user = models.CharField(max_length=50)
-    title = models.Charfield(max_length=50)
+    title = models.CharField(max_length=50)
     _audio = models.TextField(
         db_column='audio',
         blank=True
@@ -24,8 +23,8 @@ class UserProfile(models.Model):
     ProfileImg = models.CharField(max_length=100)
 
 class Friends(models.Model):
-    mainUser = models.ForeignKey(UserProfile)
-    friends = models.CharField()
+    mainUser = models.ForeignKey(UserProfile, null=True, on_delete=models.SET_NULL)
+    friends = models.CharField(max_length=50)
 
 # def query():
 #     Friends.objects.filter(mainUser__displayName='lala', friends="friend1")
