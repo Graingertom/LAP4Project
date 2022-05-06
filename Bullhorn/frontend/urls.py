@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', index, name="Bullhorn_App"),
+    path('profile', index),
 ]
