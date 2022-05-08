@@ -8,11 +8,7 @@ function App() {
 
     <>
       <div id="app">
-            <main>
-              <Routes>
-                  <Route path='/' element={<Home />}/>
-              </Routes>
-            </main>
+            <RecordSection/>
       </div>
     </>
   )
