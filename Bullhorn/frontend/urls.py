@@ -1,6 +1,6 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from .views import index
-from . import views
 
 urlpatterns = [
     path('', index, name="Bullhorn_App"),

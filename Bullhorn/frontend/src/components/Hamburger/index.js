@@ -17,6 +17,7 @@ const Hamburger = () => {
                 <li onClick={() => goTo('/')}>Home</li>
                 <li onClick={() => goTo('/profile')}>Profile</li>
                 <li>Feed</li>
+                <li onClick={() => goTo('logout')}>Logout</li>
             </ul>
         )}
     </div>

@@ -5,3 +5,4 @@ from django.http import HttpResponse
 # add login require
 def index(request, *args, **kwargs):
     return render(request, 'frontend/index.html')
+
