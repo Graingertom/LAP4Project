@@ -15,9 +15,12 @@
   <body>
     <div>
       {% if user.is_authenticated %}
-        <div id="root">
-        </div>
+      <div id="root">
+      </div>
       {% else %}
+      <section class='homeheader'>
+        <h1>Bullhorn</h1>
+    </section>
         <nav>
             <div>
               {% if user.is_authenticated %}
