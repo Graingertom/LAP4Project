@@ -16,7 +16,7 @@ const Hamburger = () => {
             <ul onMouseLeave={() => setState(!state)}>
                 <li onClick={() => goTo('/')}>Home</li>
                 <li onClick={() => goTo('/profile')}>Profile</li>
-                <li>Feed</li>
+                <li onClick={() => goTo('login')}>Login</li>
                 <li onClick={() => goTo('logout')}>Logout</li>
             </ul>
         )}
