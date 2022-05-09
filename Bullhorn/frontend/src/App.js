@@ -13,7 +13,7 @@ function App() {
               <Header />
               <Routes>
                   <Route path='/' element={<Pages.Home />}/>
-                  <Route path='/profile' element={<Pages.Profile />}/>
+                  <Route path='/profile/:username/' element={<Pages.Profile />}/>
                   <Route path='/logout' element={<Pages.Logout />}/>
               </Routes>
             </main>

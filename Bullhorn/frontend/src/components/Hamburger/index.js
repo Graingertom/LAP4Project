@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Hamburger = () => {
+
+    const username = JSON.parse(document.getElementById('user_id').textContent)
+
     const goTo = useNavigate();
 
     const [ state, setState ] = useState(false)
@@ -15,7 +18,7 @@ const Hamburger = () => {
         {state && (
             <ul onMouseLeave={() => setState(!state)}>
                 <li onClick={() => goTo('/')}>Home</li>
-                <li onClick={() => goTo('/profile')}>Profile</li>
+                <li onClick={() => goTo(`/profile/${username}`)}>Profile</li>
                 <li onClick={() => goTo('login')}>Login</li>
                 <li onClick={() => goTo('logout')}>Logout</li>
             </ul>
