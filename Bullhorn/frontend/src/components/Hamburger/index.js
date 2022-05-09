@@ -9,9 +9,11 @@ const Hamburger = () => {
     return(
         <>
     <div className='hamburger'>
-        <button className='dropdown' onClick={() => setState(!state)}>Button</button>
+        {!state && (
+        <button className='dropdown' onClick={() => setState(!state)}>☰</button>
+        )}
         {state && (
-            <ul>
+            <ul onMouseLeave={() => setState(!state)}>
                 <li onClick={() => goTo('/')}>Home</li>
                 <li onClick={() => goTo('/profile')}>Profile</li>
                 <li>Feed</li>
