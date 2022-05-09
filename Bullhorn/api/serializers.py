@@ -4,4 +4,14 @@ from .models import Post, UserProfile, Friends
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'user', 'title', 'audio')
+        fields = ('id', 'mainUser', 'title', 'audio')
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ('id', 'mainUser', 'displayName', 'ProfileImg')
+
+class FriendsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Friends
+        fields = ('id', 'mainUser', 'friends', 'following', 'followers')
