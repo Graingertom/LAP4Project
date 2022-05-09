@@ -1,4 +1,5 @@
 import React from 'react';
+import Hamburger from '../Hamburger';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
         <section className='header'>
             <a>+</a>
             <h1 onClick={() => {goTo('/')}}>Bullhorn</h1>
-            <a>Settings</a>
+            <Hamburger />
         </section>
     </>
     )
