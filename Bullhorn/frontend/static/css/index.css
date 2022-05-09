@@ -1,3 +1,13 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    max-width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
 .profile {
     max-width: 480px;
     text-align: center;
@@ -22,3 +32,19 @@
 .profile h1 {
     margin-bottom: 0;
 }
+
+.profile button {
+    color: white;
+    background-color: #0089B4;
+    border-radius: 20px;
+    min-width: 50px;
+    min-height: 35px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+}
+
+.profile button:hover {
+    cursor: pointer;
+}
+
