@@ -16,13 +16,13 @@ const ProfileBlock = () => {
             setUserInfo(data[0])
         }
         getData()
-    }, [])
+    }, [username])
 
 
     console.log(userInfo)
 
 
-    if (userInfo.mainUser !== username) {
+    if (userInfo.mainUser !== JSON.parse(document.getElementById('user_id').textContent)) {
         return (
             <>
                 <img src={userInfo.ProfileImg}></img>
