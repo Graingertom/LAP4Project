@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect, useState } from "react";
 
 import ProfileBlock from '../../components/ProfileBlock'
 
-function Profile (){
+function Profile() {
+
     return(
         <section className="profile">
         <ProfileBlock />
