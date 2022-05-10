@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const getUsers = async (username) => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/profile/?username=${username}`)
+        const response = await axios.get(`http://127.0.0.1:8000/api/profile/?main_user=${username}`)
         const data = response.data
         return data
     } catch (err) {
