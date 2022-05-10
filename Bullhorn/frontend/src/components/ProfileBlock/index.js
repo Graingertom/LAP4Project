@@ -12,7 +12,6 @@ const ProfileBlock = () => {
     useEffect(() => {
         async function getData() {
             const data = await getUsers(username);
-            console.log(data[0])
             setUserInfo(data[0])
         }
         getData()
