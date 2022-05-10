@@ -23,6 +23,7 @@ class UserProfileView(viewsets.ModelViewSet):
 class FriendsView(viewsets.ModelViewSet):
     queryset = Friends.objects.all()
     serializer_class = FriendsSerializer
+    filter_backends = [DjangoFilterBackend]
     filterset_fields = ['main_user']
     
 

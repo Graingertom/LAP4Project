@@ -11,18 +11,19 @@ def upload_to(instance, filename):
 class Post(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=50)
-    _audio = models.TextField(
+    audio = models.BinaryField(
         db_column='audio',
         blank=True
     )
-    def set_audio(self, audio):
-        self._audio = base64.encodestring(audio)
 
-    def get_audio(self):
-        return base64.decodestring(self._audio)
+    #def set_audio(self, audio):
+    #    self._audio = base64.encodestring(audio)
 
-    audio = property(get_audio, set_audio)
+    #def get_audio(self):
+    #    return base64.decodestring(self._audio)
 
+    #audio = property(get_audio, set_audio)
+    
 class UserProfile(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     display_name = models.CharField(max_length=50, unique=True, default="User")
