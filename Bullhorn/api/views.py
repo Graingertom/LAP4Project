@@ -25,7 +25,15 @@ class FriendsView(viewsets.ModelViewSet):
     serializer_class = FriendsSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['main_user']
-    
+
+class FriendsPost(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    def get_queryset(self):
+        queryset = Post.objects.all()
+        username = self.request.query_params.get('main_user')
+        if username is not None:
+            queryset = queryset.filter(main_user__in=Friends.objects.filter(main_user=username)['friends'])
+        return queryset
 
 
 
