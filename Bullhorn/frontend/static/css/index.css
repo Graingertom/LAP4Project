@@ -13,6 +13,15 @@ a {
     color: #00fff2;
 }
 
+li {
+    list-style-type: none;
+}
+
+.helptext::before {
+    content: "\a";
+    white-space: pre;
+}
+
 .header {
     display: flex;
     flex-direction: row;
