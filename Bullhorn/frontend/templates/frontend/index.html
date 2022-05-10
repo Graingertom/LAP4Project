@@ -20,15 +20,15 @@
       </div>
       {% else %}
       <section class='homeheader'>
-        <h1>Bullhorn</h1>
+        <img src="{%static "frontend/bullhornog.png" %}"
     </section>
+        <main>
         <nav>
             <div>
                 <a href="{% url 'signup' %}">Sign up</a>
                 <a href="{% url 'login' %}">Login</a>
             </div>
         </nav>
-        <main>
           {% block content %}
           {% endblock content %}
         </main>
