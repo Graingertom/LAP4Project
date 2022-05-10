@@ -9,7 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ('id', 'mainUser', 'displayName', 'ProfileImg')
+        fields = ('id', 'mainUser', 'displayName', 'ProfileImg', "discription")
 
 class FriendsSerializer(serializers.ModelSerializer):
     class Meta:

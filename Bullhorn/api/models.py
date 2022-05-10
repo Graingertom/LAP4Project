@@ -22,8 +22,9 @@ class Post(models.Model):
 
 class UserProfile(models.Model):
     mainUser = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
-    displayName = models.CharField(max_length=50, unique=True)
-    ProfileImg = models.CharField(max_length=100)
+    displayName = models.CharField(max_length=50, unique=True, default="User")
+    ProfileImg = models.CharField(max_length=100, default="https://www.clipartmax.com/png/middle/318-3182943_admin-blank-user-profile.png")
+    discription = models.TextField(db_column='discription', blank=True, default="Lets Introduce Yourself!")
 
 class Friends(models.Model):
     mainUser = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
@@ -39,6 +40,7 @@ class Friends(models.Model):
         db_column='followers',
         blank=True
     )
+
 
     
 
