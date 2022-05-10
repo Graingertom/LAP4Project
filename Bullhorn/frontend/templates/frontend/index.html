@@ -19,9 +19,9 @@
       <div id="root">
       </div>
       {% else %}
-      <section class='homeheader'>
+      <header>
         <img src="{%static "frontend/bullhornog.png" %}"
-    </section>
+    </header>
         <main>
         <nav>
             <div>
@@ -34,7 +34,9 @@
         </main>
       {% endif %}
   </div>
-    
+      <footer>
+        <h1>© <img height="20px" src="{%static "frontend/bullhorntexttransparent.png" %}" </h1>
+      </footer>
 
     <script src="{% static "frontend/main.js" %}"></script>
   </body>

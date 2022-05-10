@@ -35,7 +35,7 @@ li {
     color: white;
 }
 
-.homeheader {
+header {
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -47,6 +47,25 @@ li {
     background-color: #0089B4;
     color: white;
     margin-top: 20vh;
+}
+
+footer {
+    display: block;
+    flex-direction: row;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: #0071f3;
+    color: white;
+    margin-top: 23vh;
+}
+
+footer h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
 .home {
