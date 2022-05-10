@@ -127,7 +127,7 @@ if (navigator.mediaDevices.getUserMedia) {
       // Audio clip creation 
       audio.controls = true;
       ConAudio.controls = true;
-      const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      const audioBlob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
       chunks = [];
       const audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
@@ -142,11 +142,14 @@ if (navigator.mediaDevices.getUserMedia) {
       Confirmationbutton.onclick = () => {
         ConContainer.remove()
         clipContainer.style.display = 'block'
-        const audioCode = audioURL.split('/')
-        console.log(audioCode[3])
+        // const audioCode = audioURL.split('/')
+        // console.log(audioCode[3])
         const options = { 
           method: 'POST',
-          body: audioCode[3],
+          body: {
+            'title': clipLabel,
+            'audio': audioBlob
+          },
           headers: { "Content-Type": "application/json" }
       };
       console.log(options)
