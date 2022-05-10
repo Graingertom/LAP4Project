@@ -14,6 +14,7 @@ function App() {
               <Routes>
                   <Route path='/' element={<Pages.Home />}/>
                   <Route path='/profile/:username/' element={<Pages.Profile />}/>
+                  <Route path='/create' element={<Pages.Create />}/>
                   <Route path='/logout' element={<Pages.Logout />}/>
               </Routes>
             </main>
