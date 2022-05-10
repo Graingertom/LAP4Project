@@ -34,9 +34,11 @@
         </main>
       {% endif %}
   </div>
+    {% if request.path == '/login/' or request.path == '/logout/' or request.path == '/signup/' %}
       <footer>
         <h1>© <img height="20px" src="{%static "frontend/bullhorntexttransparent.png" %}" </h1>
       </footer>
+    {% endif %}
 
     <script src="{% static "frontend/main.js" %}"></script>
   </body>
