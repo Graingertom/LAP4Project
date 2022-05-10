@@ -7,7 +7,6 @@ import FollowButton from '../FollowButton';
 const ProfileBlock = () => {
 
     const username = useParams().username;
-    console.log(username)
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
@@ -18,11 +17,7 @@ const ProfileBlock = () => {
         getData()
     }, [username])
 
-
-    console.log(userInfo)
-
-
-    if (userInfo.mainUser !== JSON.parse(document.getElementById('user_id').textContent)) {
+    if (userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
         return (
             <>
                 <img src={userInfo.profile_img}></img>
