@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 
 import { getUsers } from "../../actions";
+import EditButton from "../EditButton";
 import FollowButton from '../FollowButton';
 
 const ProfileBlock = () => {
@@ -35,6 +36,7 @@ const ProfileBlock = () => {
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
                 <p> {userInfo.discription}</p>
+                <EditButton />
             </>
         )
     }
