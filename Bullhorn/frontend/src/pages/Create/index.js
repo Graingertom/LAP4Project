@@ -6,7 +6,7 @@ function Create (){
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e)
+        console.log(e.target.form[1].files[0])
         postProfile(e);
     }
 
