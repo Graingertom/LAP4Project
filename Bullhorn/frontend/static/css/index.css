@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -14,7 +19,7 @@
 .homeheader {
     display: flex;
     flex-direction: row;
-    max-width: 480px;
+    max-width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
