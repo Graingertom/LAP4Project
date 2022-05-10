@@ -5,6 +5,9 @@ import base64
 # Create your models here.
 User._meta.get_field('email')._unique = True
 
+def upload_to(instance, filename):
+    return 'images/{filename}'.format(filename=filename)
+
 class Post(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=50)
@@ -23,8 +26,9 @@ class Post(models.Model):
 class UserProfile(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     display_name = models.CharField(max_length=50, unique=True, default="User")
-    profile_img = models.CharField(max_length=100, default="https://www.clipartmax.com/png/middle/318-3182943_admin-blank-user-profile.png")
+    profile_img = models.ImageField(upload_to=upload_to, blank=True, null=True)
     discription = models.TextField(db_column='discription', blank=True, default="Lets Introduce Yourself!")
+
 
 class Friends(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)

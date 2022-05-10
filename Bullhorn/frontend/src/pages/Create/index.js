@@ -1,12 +1,13 @@
 import React from "react";
+import { postProfile } from "../../actions";
 
 function Create (){
 
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const handleSubmit = e => {
         e.preventDefault();
-        const img = e.target.form[1].value
-        console.log(img)
+        console.log(e)
+        postProfile(e);
     }
 
     return(
@@ -16,6 +17,8 @@ function Create (){
             <input id='mainUser' type='text' style={{display: 'none'}} defaultValue={mainUser}/>
             <label htmlFor="profileImg">Add a profile image</label>
             <input id='profileImg' type='file' accept='.jpg, .jpeg, .png'/>
+            <label htmlFor="displayName">Add a display name</label>
+            <input id='displayName' type='text'/>
             <label htmlFor="description">Add a description</label>
             <input id='description' type='text'/>
             <input type='submit' onClick={handleSubmit}/>
