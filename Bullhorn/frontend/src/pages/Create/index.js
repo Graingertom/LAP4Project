@@ -1,13 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { postProfile } from "../../actions";
 
 function Create (){
 
+    const goTo = useNavigate();
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e.target.form[1].files[0])
         postProfile(e);
+        goTo(`/profile/${e.target.form.mainUser.value}`)
     }
 
     return(

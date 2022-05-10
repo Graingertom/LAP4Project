@@ -17,6 +17,7 @@ const ProfileBlock = () => {
         getData()
     }, [username])
 
+
     if (userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
         return (
             <>
@@ -24,7 +25,7 @@ const ProfileBlock = () => {
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
                 <FollowButton />
-                <p> This is a block to add a description about yourself, who you are, why are you using Bullhorn, is it for work? Is it for fun? Let everyone know here!</p>
+                <p> {userInfo.discription}</p>
             </>
         )
     } else {
@@ -33,7 +34,7 @@ const ProfileBlock = () => {
                 <img src={userInfo.profile_img}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> This is a block to add a description about yourself, who you are, why are you using Bullhorn, is it for work? Is it for fun? Let everyone know here!</p>
+                <p> {userInfo.discription}</p>
             </>
         )
     }
