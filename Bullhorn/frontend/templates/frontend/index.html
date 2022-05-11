@@ -19,22 +19,26 @@
       <div id="root">
       </div>
       {% else %}
-      <section class='homeheader'>
-        <h1>Bullhorn</h1>
-    </section>
+      <header>
+        <img src="{%static "frontend/bullhornog.png" %}"
+    </header>
+        <main>
         <nav>
             <div>
                 <a href="{% url 'signup' %}">Sign up</a>
                 <a href="{% url 'login' %}">Login</a>
             </div>
         </nav>
-        <main>
           {% block content %}
           {% endblock content %}
         </main>
       {% endif %}
   </div>
-    
+    {% if request.path == '/login/' or request.path == '/logout/' or request.path == '/signup/' %}
+      <footer>
+        <h1>© <img height="20px" src="{%static "frontend/bullhorntexttransparent.png" %}" </h1>
+      </footer>
+    {% endif %}
 
     <script src="{% static "frontend/main.js" %}"></script>
   </body>

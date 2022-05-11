@@ -1,6 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: #0089B4;
+    /*overflow-y: hidden;*/
+}
+
+main {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+a {
+    color: #00fff2;
+}
+
+li {
+    list-style-type: none;
+}
+
+.tweetProfilePicture {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.tweetTitle {
+}
+
+.tweetAuthor::before {
+    content: "@";
+}
+
+.tweetAuthor {
+}
+
+.tweetAudio {
+
+}
+
+.tweetUrl {
+    color: rgb(71, 195, 236);
+    text-decoration: none;
+}
+
+.tweetUrl:hover {
+    text-decoration: underline;
+}
+
+.tweetBody {
+    display: flex;
+    margin: 10px;
+    margin-bottom: 50px;
+    margin-left: 70px;
+    border: 2px dotted navy;
+    background-color: ghostwhite;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+hr {
+    margin: 0;
+    width: 100%;
+    border: solid gainsboro 1px;
+    display: block;
+    opacity: 0.5;
+}
+
+.tweetProfileNameArea {
+    transform: translate(0, 10%);
+}
+
+.tweetTitleAudioArea {
+    transform: translate(-9%, -8%);
+    margin-left: 85px;
+}
+
+.helptext::before {
+    content: "\a";
+    white-space: pre;
 }
 
 .header {
@@ -16,7 +98,7 @@ body {
     color: white;
 }
 
-.homeheader {
+header {
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -27,17 +109,40 @@ body {
     justify-content: center;
     background-color: #0089B4;
     color: white;
+    margin-top: 20vh;
+}
+
+footer {
+    display: block;
+    flex-direction: row;
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: #0071f3;
+    color: white;
+    margin-top: 23vh;
+}
+
+footer h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
 .home {
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
-    max-width: 480px;
+    max-width: 680px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     min-height: 700px;
-    max-height: 732px;
+    /*max-height: 732px;*/
     background-color: aliceblue;
+    align-items: baseline;
 }
 
 .header a {
