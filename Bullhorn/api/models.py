@@ -24,7 +24,7 @@ class Post(models.Model):
     audio = property(get_audio, set_audio)
 
 class UserProfile(models.Model):
-    main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
+    main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.CASCADE)
     display_name = models.CharField(max_length=50, unique=True, default="User")
     profile_img = models.ImageField(upload_to=upload_to, blank=True, null=True)
     discription = models.TextField(db_column='discription', blank=True, default="Lets Introduce Yourself!")

@@ -1,13 +1,16 @@
 import React from "react";
-import { postProfile } from "../../actions";
+import { useNavigate } from "react-router-dom";
+import { postProfile, postFriendList } from "../../actions";
 
 function Create (){
 
+    const goTo = useNavigate();
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e)
+        postFriendList(e);
         postProfile(e);
+        goTo(`/profile/${e.target.form.mainUser.value}`)
     }
 
     return(
