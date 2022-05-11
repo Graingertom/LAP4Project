@@ -372,3 +372,21 @@
     }
     
     }
+
+    .AudioBar {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      
+      .audio-container {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      button {
+        background-color: white;
+      }
+      
+      button.active {
+        background-color: red;
+      }
