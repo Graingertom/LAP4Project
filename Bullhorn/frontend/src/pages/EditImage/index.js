@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { editProfileImage } from "../../actions";
+import { BackButton } from "../../components";
 
 function EditImage() {
 
@@ -27,6 +28,7 @@ function EditImage() {
                 <input id='profileImg' type='file' accept='.jpg, .jpeg, .png' />
                 <input type='submit' onClick={handleSubmit} />
             </form>
+            <BackButton />
         </div>
     )
 }

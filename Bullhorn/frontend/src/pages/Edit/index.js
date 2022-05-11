@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { editProfile } from "../../actions";
+import { BackButton } from "../../components";
 
 function Edit() {
 
@@ -29,6 +30,7 @@ function Edit() {
                 <input id='description' type='text' />
                 <input type='submit' onClick={handleSubmit} />
             </form>
+            <BackButton />
         </div>
     )
 }

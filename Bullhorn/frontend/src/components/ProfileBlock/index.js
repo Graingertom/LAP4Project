@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getUsers } from "../../actions";
 import EditButton from "../EditButton";
 import FollowButton from '../FollowButton';
+import BackButton from "../BackButton";
 
 const ProfileBlock = () => {
 
@@ -42,6 +43,7 @@ const ProfileBlock = () => {
                 <h2> @{userInfo.main_user} </h2>
                 <p> {userInfo.discription}</p>
                 <EditButton />
+                <BackButton />
             </>
         )
     }

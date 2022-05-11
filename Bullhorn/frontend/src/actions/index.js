@@ -32,6 +32,22 @@ export const postProfile = async (e) => {
     }
 }
 
+export const postFriendList = async (e) => {
+    try {
+        const formData = new FormData();
+
+        formData.append("main_user", e.target.form.mainUser.value);
+
+        const response = await axios.post(`http://127.0.0.1:8000/api/friends/`, formData)
+        const data = response.data
+        console.log(data)
+        if (data.err)
+        {throw Error(data.err)}
+    } catch (err) {
+        console.warn(err)
+    }
+}
+
 export const editProfile = async (e) => {
     try {
         const username = JSON.parse(document.getElementById('user_id').textContent)
@@ -69,6 +85,22 @@ export const editProfileImage = async (e) => {
             "profile_image" : e.target.form[1].files[0]
         }
         )
+        const data = response.data
+        console.log(data)
+        if (data.err)
+        {throw Error(data.err)}
+    } catch (err) {
+        console.warn(err)
+    }
+}
+
+export const postFollower = async (toFollow) => {
+    try {
+        const username = JSON.parse(document.getElementById('user_id').textContent)
+        const user = await axios.get(`http://127.0.0.1:8000/api/profile/?main_user=${username}`)
+        const userID = user.data[0].id
+
+        const response = await axios.patch(`http://127.0.0.1:8000/api/friends/${userID}/`, toFollow)
         const data = response.data
         console.log(data)
         if (data.err)
