@@ -1,6 +1,6 @@
 [build]
     command = "npm run build" # how to trigger a build
-    publish = "./static/frontend" # what folder to publish 
+    publish = "./templates/frontend" # what folder to publish 
 
 [[redirects]]
     from = "/*" 
