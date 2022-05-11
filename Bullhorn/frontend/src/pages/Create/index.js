@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { postProfile, postFriendList } from "../../actions";
-import { BackButton } from "../../components";
 
 function Create (){
 
@@ -9,7 +8,7 @@ function Create (){
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const handleSubmit = e => {
         e.preventDefault();
-        postFriendList(e)
+        postFriendList(e);
         postProfile(e);
         goTo(`/profile/${e.target.form.mainUser.value}`)
     }
@@ -27,7 +26,6 @@ function Create (){
             <input id='description' type='text'/>
             <input type='submit' onClick={handleSubmit}/>
         </form>
-        <BackButton />
         </div>
     )
 }
