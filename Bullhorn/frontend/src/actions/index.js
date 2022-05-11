@@ -99,7 +99,7 @@ export const postFollower = async (toFollow) => {
         const username = JSON.parse(document.getElementById('user_id').textContent)
         const user = await axios.get(`http://127.0.0.1:8000/api/friends/?main_user=${username}`)
         const userID = user.data[0].id
-        let friendList = [user.data[0].following]
+        let friendList = user.data[0].following.split(',')
         friendList.push(toFollow)
         const followData = {
             "following": friendList.toString()
@@ -107,7 +107,7 @@ export const postFollower = async (toFollow) => {
 
         const response = await axios.patch(`http://127.0.0.1:8000/api/friends/${userID}/`, followData)
         const data = response.data
-        console.log(data)
+        console.log(data.following.split(','))
         if (data.err)
         {throw Error(data.err)}
     } catch (err) {
