@@ -104,7 +104,7 @@ export const editProfileImage = async (e) => {
     }
 }
 
-export const postFollower = async (toFollow) => {
+export const postFollowing = async (toFollow) => {
     try {
         const username = JSON.parse(document.getElementById('user_id').textContent)
         const user = await axios.get(`http://127.0.0.1:8000/api/friends/?main_user=${username}`)
@@ -113,6 +113,27 @@ export const postFollower = async (toFollow) => {
         friendList.push(toFollow)
         const followData = {
             "following": friendList.toString()
+        }
+
+        const response = await axios.patch(`http://127.0.0.1:8000/api/friends/${userID}/`, followData)
+        const data = response.data
+        console.log(data.following.split(','))
+        if (data.err)
+        {throw Error(data.err)}
+    } catch (err) {
+        console.warn(err)
+    }
+}
+
+export const postFollower = async (toFollow) => {
+    try {
+        const username = JSON.parse(document.getElementById('user_id').textContent)
+        const user = await axios.get(`http://127.0.0.1:8000/api/friends/?main_user=${toFollow}`)
+        const userID = user.data[0].id
+        let friendList = user.data[0].followers.split(',')
+        friendList.push(username)
+        const followData = {
+            "followers": friendList.toString()
         }
 
         const response = await axios.patch(`http://127.0.0.1:8000/api/friends/${userID}/`, followData)

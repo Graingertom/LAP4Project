@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { postFollower } from '../../actions';
+import { postFollower, postFollowing } from '../../actions';
 
 const FollowButton = () => {
 
     const toFollow = useParams().username
 
     const follow = () => {
+            postFollowing(toFollow);
             postFollower(toFollow);          
         }
 

@@ -11,6 +11,7 @@ const ProfileBlock = () => {
     const goTo = useNavigate();
     const username = useParams().username;
     const [userInfo, setUserInfo] = useState([]);
+    const [followingInfo, setFollowingInfo] = useState([]);
     const [followerInfo, setFollowerInfo] = useState([]);
 
     useEffect(() => {
@@ -24,7 +25,8 @@ const ProfileBlock = () => {
     useEffect(() => {
         async function getFollower() {
             const followData = await getFollowerInfo(username);
-            setFollowerInfo(followData[0].following.split(','))
+            setFollowingInfo(followData[0].following.split(','))
+            setFollowerInfo(followData[0].followers.split(','))
         }
         getFollower()
     }, [username])
@@ -40,7 +42,8 @@ const ProfileBlock = () => {
                 <img src={userInfo.profile_img}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> following: {followerInfo} </p>
+                <p> following: {followingInfo.length} </p>
+                <p> followers: {followerInfo.length} </p>
                 <FollowButton />
                 <p> {userInfo.discription}</p>
             </>
@@ -51,7 +54,8 @@ const ProfileBlock = () => {
                 <img src={userInfo.profile_img}  onClick={changeImage}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> following: {followerInfo.length} </p>
+                <p> following: {followingInfo.length} </p>
+                <p> followers: {followerInfo.length} </p>
                 <p> {userInfo.discription}</p>
                 <EditButton />
                 <BackButton />
