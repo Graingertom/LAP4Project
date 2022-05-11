@@ -11,10 +11,7 @@ def upload_to(instance, filename):
 class Post(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=50)
-    audio = models.BinaryField(
-        db_column='audio',
-        blank=True
-    )
+    audio = models.FileField(upload_to='audio/')
 
     #def set_audio(self, audio):
     #    self._audio = base64.encodestring(audio)
