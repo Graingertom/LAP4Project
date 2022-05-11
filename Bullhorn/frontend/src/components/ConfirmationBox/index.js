@@ -22,12 +22,15 @@ function ConfirmationBox({ audioBlob, audioURL}) {
 
         try{
             const formData = new FormData()
-            const body = {
-                'mainUser': mainUser,
-                'title': input,
-                'audio': audioBlob
-              }
-            const resp = await axios.post('http://localhost:8000/api/post/',body)
+            formData.append("mainUser", mainUser)
+            formData.append("title", input)
+            formData.append("audio", audioBlob)
+            // const body = {
+            //     'mainUser': mainUser,
+            //     'title': input,
+            //     'audio': audioBlob
+            //   }
+            const resp = await axios.post('http://localhost:8000/api/post/',formData)
             const data = resp.data
             console.log(data)
             if(data.err){

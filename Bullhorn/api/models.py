@@ -8,17 +8,10 @@ User._meta.get_field('email')._unique = True
 class Post(models.Model):
     mainUser = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=50)
-    _audio = models.TextField(
+    audio = models.BinaryField(
         db_column='audio',
         blank=True
     )
-    def set_audio(self, audio):
-        self._audio = base64.encodestring(audio)
-
-    def get_audio(self):
-        return base64.decodestring(self._audio)
-
-    audio = property(get_audio, set_audio)
 
 class UserProfile(models.Model):
     mainUser = models.ForeignKey(User, to_field="username", null=True, on_delete=models.SET_NULL)

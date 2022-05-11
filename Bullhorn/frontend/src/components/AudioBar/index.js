@@ -20,8 +20,10 @@ export default function AudioBar() {
     url: ""
   });
 
+  const [audioBlob, setAudioBlob] = useState([])
+
   const chunks = useRef([]);
-  const audioBlob = chunks.current[0]// , { 'type' : 'audio/ogg; codecs=opus' 
+  // setAudioBlob(chunks.current[0])// , { 'type' : 'audio/ogg; codecs=opus' 
   console.log(chunks.current[0]) 
   
   
@@ -57,16 +59,20 @@ export default function AudioBar() {
           
         };
 
+
+        // const view = reader.readAsArrayBuffer(chunks.current[0]);
+
         mediaRecorder.onstop = async function () {
           console.log("stopped");
-            const test = await chunks.current[0].arrayBuffer()
+            setAudioBlob(chunks.current[0])
+            const test = chunks.current[0]
             console.log("This is chunks "+  test)
             console.log('This is audio Blob '+ audioBlob)
             const formData = new FormData();
             formData.append('audio', test)
             console.log(formData)
             
-          const url = URL.createObjectURL(chunks.current[0]);
+          const url = URL.createObjectURL(test);
           chunks.current = [];
 
           setRecording({
@@ -100,7 +106,7 @@ export default function AudioBar() {
             Start Recording
           </button>
           <button onClick={() => stream.recorder.stop()}>Stop Recording</button>
-          {recording.available && <ConfirmationBox  audioURL={recording.url} /> }
+          {recording.available && <ConfirmationBox audioBlob={audioBlob} audioURL={recording.url} /> }
         </div>
       ) : (
         <button onClick={getAccess}>Get Mic Access</button>
