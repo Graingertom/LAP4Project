@@ -100,3 +100,25 @@ body {
     min-width: 50px;
     list-style: none;
 }
+
+.create {
+    padding-top: 20px;
+    max-width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 700px;
+    max-height: 732px;
+    background-color: aliceblue;
+}
+
+.Edit {
+    padding-top: 20px;
+    max-width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 700px;
+    max-height: 732px;
+    background-color: aliceblue;
+}

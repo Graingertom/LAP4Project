@@ -7,4 +7,5 @@ urlpatterns = [
     path('profile/<str:username>', index),
     path('create', index),
     path('edit', index),
+    path('edit/image', index),
 ]

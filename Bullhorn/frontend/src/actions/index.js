@@ -40,17 +40,33 @@ export const editProfile = async (e) => {
         const userData = user.data[0]
         const userID = user.data[0].id
         
-        // const formData = new FormData();
-        // formData.append("main_user", e.target.form.mainUser.value);
-        // formData.append("display_name", e.target.form.displayName.value || userData.display_name);
-        // formData.append("profile_img", e.target.form[1].files[0] || userData.profile_img);
-        // formData.append("discription", e.target.form.description.value || userData.discription);
-        
         const response = await axios.patch(`http://127.0.0.1:8000/api/profile/${userID}/`,
         {
             "main_user": e.target.form.mainUser.value,
             "display_name": e.target.form.displayName.value || userData.display_name,
             "discription": e.target.form.description.value || userData.discription
+        }
+        )
+        const data = response.data
+        console.log(data)
+        if (data.err)
+        {throw Error(data.err)}
+    } catch (err) {
+        console.warn(err)
+    }
+}
+
+export const editProfileImage = async (e) => {
+    try {
+        const username = JSON.parse(document.getElementById('user_id').textContent)
+        
+        const user = await axios.get(`http://127.0.0.1:8000/api/profile/?main_user=${username}`)
+        const userID = user.data[0].id
+        
+        const response = await axios.patch(`http://127.0.0.1:8000/api/profile/${userID}/`,
+        {
+            "main_user": e.target.form.mainUser.value,
+            "profile_image" : e.target.form[1].files[0]
         }
         )
         const data = response.data

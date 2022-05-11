@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getUsers } from "../../actions";
 import EditButton from "../EditButton";
@@ -7,6 +7,7 @@ import FollowButton from '../FollowButton';
 
 const ProfileBlock = () => {
 
+    const goTo = useNavigate();
     const username = useParams().username;
     const [userInfo, setUserInfo] = useState([]);
 
@@ -17,6 +18,10 @@ const ProfileBlock = () => {
         }
         getData()
     }, [username])
+
+    const changeImage = () => {
+        goTo('/edit/image')
+    }
 
 
     if (userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
@@ -32,7 +37,7 @@ const ProfileBlock = () => {
     } else {
         return (
             <>
-                <img src={userInfo.profile_img}></img>
+                <img src={userInfo.profile_img}  onClick={changeImage}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
                 <p> {userInfo.discription}</p>
