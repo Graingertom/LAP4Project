@@ -15,6 +15,7 @@
   <body>
     <div>
       {% if user.is_authenticated %}
+      {{ request.user.get_username|json_script:"user_id" }}
       <div id="root">
       </div>
       {% else %}
