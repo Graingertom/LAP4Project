@@ -42,10 +42,11 @@ const ProfileBlock = () => {
                 <img src={userInfo.profile_img}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> following: {followingInfo.length} </p>
-                <p> followers: {followerInfo.length} </p>
+                <p> following: {followingInfo.length-1} </p>
+                <p> followers: {followerInfo.length-1} </p>
                 <FollowButton />
                 <p> {userInfo.discription}</p>
+                <BackButton />
             </>
         )
     } else {
@@ -54,8 +55,8 @@ const ProfileBlock = () => {
                 <img src={userInfo.profile_img}  onClick={changeImage}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> following: {followingInfo.length} </p>
-                <p> followers: {followerInfo.length} </p>
+                <p> following: {followingInfo.length-1} </p>
+                <p> followers: {followerInfo.length-1} </p>
                 <p> {userInfo.discription}</p>
                 <EditButton />
                 <BackButton />
