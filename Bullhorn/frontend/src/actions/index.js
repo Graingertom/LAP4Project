@@ -13,6 +13,16 @@ export const getUsers = async (username) => {
     }
 }
 
+export const getFollowerInfo = async (username) => {
+    try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/friends/?main_user=${username}`)
+        const data = response.data
+        return data
+    } catch (err) {
+        console.warn(err)
+    }
+}
+
 export const postProfile = async (e) => {
     try {
         const formData = new FormData();
