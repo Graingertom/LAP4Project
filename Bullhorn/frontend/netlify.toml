@@ -3,7 +3,7 @@
     publish = "./static/frontend" # what folder to publish 
 
 [[redirects]]
-    from = "/" 
+    from = "/*" 
     to = "/templates/frontend/index.html" # to this html page
     status = 200 # with this status
 
