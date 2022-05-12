@@ -300,3 +300,7 @@ footer h1 {
 input {
     margin-bottom: 20px;
 }
+
+.footerBanner {
+    transform: translate(0, 216%);
+}
