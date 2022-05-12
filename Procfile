@@ -1,1 +1,1 @@
-web: gunicorn Bullhorn/Bullhorn/wsgi.py
+web: gunicorn --pythonpath Bullhorn Bullhorn.wsgi
