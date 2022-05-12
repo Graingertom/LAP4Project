@@ -15,16 +15,16 @@ function Create (){
 
     return(
         <div className="create">
-        <h1>This is the Create Page</h1>
+        <h1>Create your user!</h1>
         <form id='form'>
             <input id='mainUser' type='text' style={{display: 'none'}} defaultValue={mainUser}/>
-            <label htmlFor="profileImg">Add a profile image</label>
-            <input id='profileImg' type='file' accept='.jpg, .jpeg, .png'/>
-            <label htmlFor="displayName">Add a display name</label>
-            <input id='displayName' type='text'/>
-            <label htmlFor="description">Add a description</label>
-            <input id='description' type='text'/>
-            <input type='submit' onClick={handleSubmit}/>
+            <label htmlFor="profileImg">Add a profile image</label><br />
+            <input id='profileImg' type='file' accept='.jpg, .jpeg, .png'/><br />
+            <label htmlFor="displayName">Add a display name</label><br />
+            <input id='displayName' type='text'/><br />
+            <label htmlFor="description">Add a description</label><br />
+            <input id='description' type='text'/><br />
+            <input type='submit' onClick={handleSubmit}/><br />
         </form>
         </div>
     )
