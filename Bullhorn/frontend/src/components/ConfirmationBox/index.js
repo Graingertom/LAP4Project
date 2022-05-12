@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 function ConfirmationBox({ audioBlob, audioURL}) {
+    const goTo = useNavigate();
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const [input,updateInput] = useState()
     function UpdateInput (e){
@@ -19,7 +21,6 @@ function ConfirmationBox({ audioBlob, audioURL}) {
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
     }
     const sendpost = async () => {
-
         try{
             const formData = new FormData()
             formData.append("main_user", mainUser)
@@ -58,7 +59,11 @@ function ConfirmationBox({ audioBlob, audioURL}) {
                 <audio controls src={audioURL}></audio>
                 <p>{input}</p>
                 <button onClick={removePost} className="delete">Delete</button>
-                <button onClick={sendpost} className="Keep">Keep</button>
+                <button onClick={() => {
+                        sendpost(); 
+                        console.log('oastarst')
+                        goTo('/')
+                    }} className="Keep">Keep</button>
             </article>
         </section>
     )
