@@ -1,9 +1,9 @@
+import { AudioBar } from "../../components";
 import React, {useState, useEffect} from "react";
 import Tweet from "../../components/Tweet"
 import axios from 'axios';
 
 function Home() {
-
     const [tweetArray, setTweetArray] = useState([]);
     const [TweetList, setTweetList] = useState([]);
 
@@ -17,6 +17,7 @@ function Home() {
 
     return(
         <div className="home">
+            <AudioBar/>
             {TweetList}
         </div>
     )

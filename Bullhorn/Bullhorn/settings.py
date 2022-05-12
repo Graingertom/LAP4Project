@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'frontend',
     'Users',
     'django_filters',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -57,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'Bullhorn.urls'
@@ -75,6 +78,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    
 ]
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'mediafiles')
