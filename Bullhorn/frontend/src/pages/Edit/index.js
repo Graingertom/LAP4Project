@@ -18,17 +18,17 @@ function Edit() {
 
     return (
         <div className="Edit">
-            <h1>This is the Edit Page</h1>
+            <h1>Edit your profile</h1>
             <form id='form'>
                 {errorMessage && (
                     <p className="error"> {errorMessage} </p>
                 )}
                 <input id='mainUser' type='text' style={{ display: 'none' }} defaultValue={mainUser} />
-                <label htmlFor="displayName">Change your display name</label>
-                <input id='displayName' type='text' />
-                <label htmlFor="description">Change your description</label>
-                <input id='description' type='text' />
-                <input type='submit' onClick={handleSubmit} />
+                <label htmlFor="displayName">Change your display name</label><br />
+                <input id='displayName' type='text' /><br />
+                <label htmlFor="description">Change your description</label><br />
+                <input id='description' type='text' /><br />
+                <input type='submit' onClick={handleSubmit} /><br />
             </form>
             <BackButton />
         </div>
