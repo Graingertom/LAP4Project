@@ -1,21 +1,12 @@
-<<<<<<< HEAD
 import { AudioBar, Tweet } from "../../components";
-=======
-import { AudioBar } from "../../components";
->>>>>>> origin/development
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 
 function Home() {
-<<<<<<< HEAD
-    const [tweetArray, setTweetArray] = useState([]);
-    const [TweetList, setTweetList] = useState([]);
-=======
     const [profileArray, setProfileArray] = useState();
     const [tweetArray, setTweetArray] = useState();
     const [processingArray, setProcessingArray] = useState();
     const [TweetList, setTweetList] = useState();
->>>>>>> origin/development
 
     useEffect(() => {
         getAllTweets();
