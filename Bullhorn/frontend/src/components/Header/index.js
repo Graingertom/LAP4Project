@@ -8,7 +8,7 @@ const Header = () => {
     return(
     <>
         <section className='header'>
-            <a className="plusIcon">+</a>
+            <a className="plusIcon" href="/new">+</a>
             <img onClick={() => {goTo('/')}} src="/static/frontend/bullhorntext.png" />
             <Hamburger />
         </section>

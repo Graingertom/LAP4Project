@@ -19,7 +19,6 @@ function ConfirmationBox({ audioBlob, audioURL}) {
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
     }
     const sendpost = async () => {
-
         try{
             const formData = new FormData()
             formData.append("main_user", mainUser)
@@ -37,6 +36,7 @@ function ConfirmationBox({ audioBlob, audioURL}) {
             const resp = await axios.post('http://localhost:8000/api/post/',formData)
             const data = resp.data
             console.log(data)
+            window.location.href = "http://localhost:8000";
             if(data.err){
                 throw Error(data.err)
             }

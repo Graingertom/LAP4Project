@@ -81,22 +81,22 @@ export default function AudioBar() {
   }
 
   return (
-    <div className="AudioBar">
-      {stream.access ? (
-        <div className="audio-container">
-          <button
-            className={recording.active ? "active" : null}
-            onClick={() => !recording.active && stream.recorder.start()}
-          >
-            Start Recording
-          </button>
-          <button onClick={() => stream.recorder.stop()}>Stop Recording</button>
-          {recording.available && <ConfirmationBox audioBlob={blob} audioURL={recording.url} />}
-        </div>
-      ) : (
-        <button onClick={getAccess}>Get Mic Access</button>
-      )}
-    </div>
-
+    <>
+      <div className="home AudioBar ">
+        {stream.access ? (
+          <div className="audio-container">
+            <button className="startRecButton"
+              onClick={() => !recording.active && stream.recorder.start()}>Start Recording</button>
+            <button className="stopRecButton" onClick={() => stream.recorder.stop()}>Stop Recording</button>
+              {recording.active ? <h1 className="recordingText">Recording!</h1> : null}
+            {recording.available && <ConfirmationBox audioBlob={blob} audioURL={recording.url} />}
+          </div>
+        ) : (
+          <div className="audio-container">
+          <button onClick={getAccess}>Get Mic Access</button>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
