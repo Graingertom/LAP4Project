@@ -12,7 +12,7 @@ function App() {
             <main>
               <Header />
               <Routes>
-                  <Route path='/' element={<Pages.Home />}/>
+                  <Route path='/' id="home" element={<Pages.Home />}/>
                   <Route path='/profile/:username/' element={<Pages.Profile />}/>
                   <Route path='/edit' element={<Pages.Edit />}/>
                   <Route path='/edit/image' element={<Pages.EditImage />}/>

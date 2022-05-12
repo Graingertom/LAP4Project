@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652303106030" clover="3.2.0">
-  <project timestamp="1652303106030" name="All files">
-    <metrics statements="96" coveredstatements="31" conditionals="16" coveredconditionals="0" methods="12" coveredmethods="6" elements="124" coveredelements="37" complexity="0" loc="96" ncloc="96" packages="3" files="3" classes="3"/>
+<coverage generated="1652356128550" clover="3.2.0">
+  <project timestamp="1652356128569" name="All files">
+    <metrics statements="136" coveredstatements="50" conditionals="22" coveredconditionals="0" methods="28" coveredmethods="10" elements="186" coveredelements="60" complexity="0" loc="136" ncloc="136" packages="7" files="7" classes="7"/>
     <package name="actions">
       <metrics statements="88" coveredstatements="25" conditionals="16" coveredconditionals="0" methods="8" coveredmethods="4"/>
-      <file name="index.js" path="C:\Users\Tom's Laptop\Documents\futureproofWork\Lap4Project\Bullhorn\frontend\src\actions\index.js">
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/actions/index.js">
         <metrics statements="88" coveredstatements="25" conditionals="16" coveredconditionals="0" methods="8" coveredmethods="4"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
@@ -33,7 +33,7 @@
         <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="39" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
@@ -43,7 +43,7 @@
         <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="55" count="0" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
@@ -55,7 +55,7 @@
         <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="79" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
-        <line num="85" count="1" type="stmt"/>
+        <line num="85" count="3" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
         <line num="87" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
@@ -66,7 +66,7 @@
         <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="101" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
-        <line num="107" count="1" type="stmt"/>
+        <line num="107" count="3" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
         <line num="109" count="0" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
@@ -80,7 +80,7 @@
         <line num="121" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="122" count="0" type="stmt"/>
         <line num="124" count="0" type="stmt"/>
-        <line num="128" count="1" type="stmt"/>
+        <line num="128" count="3" type="stmt"/>
         <line num="129" count="1" type="stmt"/>
         <line num="130" count="1" type="stmt"/>
         <line num="131" count="0" type="stmt"/>
@@ -98,9 +98,9 @@
     </package>
     <package name="components.BackButton">
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="index.js" path="C:\Users\Tom's Laptop\Documents\futureproofWork\Lap4Project\Bullhorn\frontend\src\components\BackButton\index.js">
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/BackButton/index.js">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -108,12 +108,76 @@
     </package>
     <package name="components.EditButton">
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="index.js" path="C:\Users\Tom's Laptop\Documents\futureproofWork\Lap4Project\Bullhorn\frontend\src\components\EditButton\index.js">
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/EditButton/index.js">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.FollowButton">
+      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/FollowButton/index.js">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Hamburger">
+      <metrics statements="10" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/Hamburger/index.js">
+        <metrics statements="10" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Header">
+      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/Header/index.js">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProfileBlock">
+      <metrics statements="20" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <file name="index.js" path="/Users/apple/Desktop/de_work/futureproof/LAP4Project/Bullhorn/frontend/src/components/ProfileBlock/index.js">
+        <metrics statements="20" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="39" count="4" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
       </file>
     </package>
   </project>

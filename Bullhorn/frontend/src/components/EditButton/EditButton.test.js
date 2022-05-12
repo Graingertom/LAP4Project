@@ -14,7 +14,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('HomeButton', () => {
+describe('EditButton', () => {
     beforeEach(() => {
         render(<EditButton />, { wrapper: MemoryRouter });
     })

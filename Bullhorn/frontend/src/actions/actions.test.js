@@ -21,7 +21,7 @@ describe('getUsers', () => {
 describe('getFollowerInfo', () => {
     it('successfully gets data from the API', async () => {
         const username = 'tom'
-        const data = {id:1,main_user:"tom",friends:"",following:",test2,test3",followers:""};
+        const data = {id:1,main_user:"tom",friends:"",following:"test2,test3",followers:""};
 
         axios.get.mockResolvedValueOnce(data);
 
@@ -51,11 +51,12 @@ describe('postFriendList', () => {
 
         axios.post.mockResolvedValueOnce(data);
         
-        await postFriendList(data);
+        const result = await postFriendList(data);
 
-        expect(axios.post).toHaveBeenCalledWith(`http://127.0.0.1:8000/api/friends/`, { main_user: 'Test'});
-    })
+        expect(axios.post).toHaveBeenCalledWith(`http://127.0.0.1:8000/api/friends/`); // , { "main_user": "Test"}
+        expect(result).toEqual(data);
+    })})
 
-})
+    
 
 
