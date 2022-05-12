@@ -36,7 +36,11 @@ const ProfileBlock = () => {
     }
 
 
+<<<<<<< HEAD
     if (userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
+=======
+    if (userInfo && userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
+>>>>>>> origin/development
         return (
             <>
                 <img src={userInfo.profile_img}></img>
