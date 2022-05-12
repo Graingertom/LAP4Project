@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 
 axios.defaults.xsrfCookieName = 'csrftoken'
@@ -8,22 +8,11 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 function ConfirmationBox({ audioBlob, audioURL}) {
     const mainUser = JSON.parse(document.getElementById('user_id').textContent)
     const [input,updateInput] = useState()
-    const [array, updateArray] = useState()
     function UpdateInput (e){
         const currentInput = e.target.value
         updateInput(currentInput) 
     }
-    const blop = async () => {updateArray(await audioBlob.arrayBuffer())}
 
-    useEffect(() => {
-        blop();
-      }, []);
-    
-    const assembleBlop = new Blob([array], { 'type' : 'audio/ogg; codecs=opus' })
-    console.log(audioBlob)
-    console.log(array)
-    console.log(assembleBlop)
-    console.log(audioURL)
 
     const removePost = (e) => {
         let evtTgt = e.target;
@@ -38,7 +27,6 @@ function ConfirmationBox({ audioBlob, audioURL}) {
             formData.append("audio", audioBlob)
             console.log(mainUser)
             console.log(input)
-            console.log(array)
             console.log(formData)
             //const body = {
             //     'main_user': mainUser,

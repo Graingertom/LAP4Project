@@ -1,6 +1,5 @@
-import { AudioBar } from "../../components";
+import { AudioBar, Tweet } from "../../components";
 import React, {useState, useEffect} from "react";
-import Tweet from "../../components/Tweet"
 import axios from 'axios';
 
 function Home() {
