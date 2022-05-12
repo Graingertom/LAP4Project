@@ -35,7 +35,7 @@ function ConfirmationBox({ audioBlob, audioURL}) {
             //     'audio': array
             //   }
             
-            const resp = await axios.post('http://localhost:8000/api/post/',formData)
+            const resp = await axios.post('https://vast-tundra-28650.herokuapp.com/api/post/',formData)
             const data = resp.data
             console.log(data)
             if(data.err){
