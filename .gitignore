@@ -1,3 +1,4 @@
 **/node_modules
 ./Bullhorn/api/__pycache__
 **/__pycache__
+mediafiles
