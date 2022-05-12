@@ -1,4 +1,4 @@
-import { AudioBar, Tweet } from "../../components";
+import { Tweet } from "../../components";
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import { getUsers } from "../../actions";
