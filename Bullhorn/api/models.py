@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 import base64
@@ -24,7 +25,7 @@ class Post(models.Model):
 class UserProfile(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.CASCADE)
     display_name = models.CharField(max_length=50, unique=True, default="User")
-    profile_img = models.ImageField(upload_to=upload_to, blank=True, null=True)
+    profile_img = models.ImageField(upload_to=upload_to, blank=True, null=True, default="https://www.clipartmax.com/png/middle/318-3182943_admin-blank-user-profile.png")
     discription = models.TextField(db_column='discription', blank=True, default="Lets Introduce Yourself!")
 
 
