@@ -1,3 +1,7 @@
 **/node_modules
 ./Bullhorn/api/__pycache__
 **/__pycache__
+**/db.sqlite3
+mediafiles
+**/migrations
+Bullhorn/frontend/static/frontend/main.js
