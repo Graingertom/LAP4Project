@@ -8,8 +8,8 @@ const Header = () => {
     return(
     <>
         <section className='header'>
-            <a>+</a>
-            <h1 onClick={() => {goTo('/')}}>Bullhorn</h1>
+            <a class="plusIcon">+</a>
+            <img onClick={() => {goTo('/')}} src="/static/frontend/bullhorntext.png" />
             <Hamburger />
         </section>
     </>

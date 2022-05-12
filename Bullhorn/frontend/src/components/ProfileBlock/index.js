@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import { getUsers } from "../../actions";
+import { getFollowerInfo, getUsers } from "../../actions";
+import EditButton from "../EditButton";
 import FollowButton from '../FollowButton';
+import BackButton from "../BackButton";
 
 const ProfileBlock = () => {
 
+    const goTo = useNavigate();
     const username = useParams().username;
-    console.log(username)
     const [userInfo, setUserInfo] = useState([]);
+    const [followingInfo, setFollowingInfo] = useState([]);
+    const [followerInfo, setFollowerInfo] = useState([]);
 
     useEffect(() => {
         async function getData() {
@@ -18,27 +22,44 @@ const ProfileBlock = () => {
         getData()
     }, [username])
 
+    useEffect(() => {
+        async function getFollower() {
+            const followData = await getFollowerInfo(username);
+            setFollowingInfo(followData[0].following.split(','))
+            setFollowerInfo(followData[0].followers.split(','))
+        }
+        getFollower()
+    }, [username])
 
-    console.log(userInfo)
+    const changeImage = () => {
+        goTo('/edit/image')
+    }
 
 
-    if (userInfo.mainUser !== JSON.parse(document.getElementById('user_id').textContent)) {
+    if (userInfo.main_user !== JSON.parse(document.getElementById('user_id').textContent)) {
         return (
             <>
                 <img src={userInfo.profile_img}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
+                <p> following: {followingInfo.length-1} </p>
+                <p> followers: {followerInfo.length-1} </p>
                 <FollowButton />
-                <p> This is a block to add a description about yourself, who you are, why are you using Bullhorn, is it for work? Is it for fun? Let everyone know here!</p>
+                <p> {userInfo.discription}</p>
+                <BackButton />
             </>
         )
     } else {
         return (
             <>
-                <img src={userInfo.profile_img}></img>
+                <img src={userInfo.profile_img}  onClick={changeImage}></img>
                 <h1> {userInfo.display_name} </h1>
                 <h2> @{userInfo.main_user} </h2>
-                <p> This is a block to add a description about yourself, who you are, why are you using Bullhorn, is it for work? Is it for fun? Let everyone know here!</p>
+                <p> following: {followingInfo.length-1} </p>
+                <p> followers: {followerInfo.length-1} </p>
+                <p> {userInfo.discription}</p>
+                <EditButton />
+                <BackButton />
             </>
         )
     }

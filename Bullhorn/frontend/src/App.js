@@ -14,6 +14,8 @@ function App() {
               <Routes>
                   <Route path='/' element={<Pages.Home />}/>
                   <Route path='/profile/:username/' element={<Pages.Profile />}/>
+                  <Route path='/edit' element={<Pages.Edit />}/>
+                  <Route path='/edit/image' element={<Pages.EditImage />}/>
                   <Route path='/create' element={<Pages.Create />}/>
                   <Route path='/logout' element={<Pages.Logout />}/>
               </Routes>
