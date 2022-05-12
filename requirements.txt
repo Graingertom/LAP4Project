@@ -41,4 +41,5 @@ typing_extensions==4.2.0
 tzdata==2022.1
 virtualenv==20.14.1
 virtualenv-clone==0.5.7
+whitenoise==6.1.0
 zope.interface==5.4.0
