@@ -21,6 +21,8 @@ describe('Profile', () => {
 
     test('renders the profile', () => {
         const hdr = screen.getByRole('p')
+        const test = screen.getByRole('h2')
+        expect(test.textContent).toContain('@');
         expect(hdr.textContent).toContain('following:');
         expect(hdr.textContent).toContain('following:');
 
