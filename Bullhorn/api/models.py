@@ -25,7 +25,7 @@ class Post(models.Model):
 class UserProfile(models.Model):
     main_user = models.ForeignKey(User, to_field="username", null=True, on_delete=models.CASCADE)
     display_name = models.CharField(max_length=50, unique=True, default="User")
-    profile_img = models.ImageField(upload_to=upload_to, blank=True, null=True, default="http://127.0.0.1:8000/media/images/default.jpg")
+    profile_img = models.ImageField(upload_to='images/', blank=True, null=True, default="http://127.0.0.1:8000/media/images/default.jpg")
     discription = models.TextField(db_column='discription', blank=True, default="Lets Introduce Yourself!")
 
 
