@@ -4,9 +4,10 @@ import Tweet from "../../components/Tweet"
 import axios from 'axios';
 
 function Home() {
-    const [tweetArray, setTweetArray] = useState([]);
-    const [processingArray, setProcessingArray] = useState([]);
-    const [TweetList, setTweetList] = useState([]);
+    const [profileArray, setProfileArray] = useState();
+    const [tweetArray, setTweetArray] = useState();
+    const [processingArray, setProcessingArray] = useState();
+    const [TweetList, setTweetList] = useState();
 
     useEffect(() => {
         getAllTweets();
@@ -28,6 +29,13 @@ function Home() {
         </>
     )
 
+    async function getProfilePicture(username) {
+        //deep copy
+        let arr = JSON.parse(JSON.stringify(profileArray));
+        const temp = await axios.get(`${window.location.protocol}//${window.location.host}/api/profile/?main_user=${tweet.main_user}`);
+        let newData = await temp.data;
+    }
+
     async function addProfilePictures() {
         if (!tweetArray) {
             return;
@@ -36,15 +44,20 @@ function Home() {
         let localTweets = JSON.parse(JSON.stringify(tweetArray));
         console.log(localTweets)
         for (let tweet in localTweets) {
+            if (!tweet.main_user) continue;
             const temp = await axios.get(`${window.location.protocol}//${window.location.host}/api/profile/?main_user=${tweet.main_user}`);
-            const newData = await temp.data;
-            tweet.main_user = newData.main_user;
+            let newData = await temp.data;
+            console.log(newData)
+            tweet.pfp = newData.profile_img;
         }
         setProcessingArray(localTweets);
         //console.log(localTweets)
     }
 
     async function renderAllTweets() {
+        if (!processingArray) {
+            return;
+        }
         let arr = processingArray.map(tweet => <Tweet main_user={tweet.main_user} title={tweet.title} audio={tweet.audio} pfp={tweet.pfp} />);
         setTweetList(arr);
     }
