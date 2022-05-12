@@ -20,10 +20,10 @@ function ConfirmationBox({ audioBlob, audioURL}) {
       }, []);
     
     const assembleBlop = new Blob([array], { 'type' : 'audio/ogg; codecs=opus' })
-    console.log(audioBlob)
-    console.log(array)
-    console.log(assembleBlop)
-    console.log(audioURL)
+    // console.log(audioBlob)
+    // // console.log(array)
+    // console.log(assembleBlop)
+    // console.log(audioURL)
 
     const removePost = (e) => {
         let evtTgt = e.target;

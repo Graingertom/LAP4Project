@@ -8,4 +8,5 @@ urlpatterns = [
     path('create', index),
     path('edit', index),
     path('edit/image', index),
+    path('new', index)
 ]
