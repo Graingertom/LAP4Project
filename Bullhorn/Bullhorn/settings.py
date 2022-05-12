@@ -83,6 +83,7 @@ TEMPLATES = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
+    'vast-tundra-28650.herokuapp.com',
     
 ]
 
