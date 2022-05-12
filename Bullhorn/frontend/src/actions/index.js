@@ -5,7 +5,7 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
 export const getUsers = async (username) => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/profile/?main_user=${username}`)
+        const response = await axios.get(`https://vast-tundra-28650.herokuapp.com/api/profile/?main_user=${username}`)
         const data = response.data
         return data
     } catch (err) {
@@ -15,7 +15,7 @@ export const getUsers = async (username) => {
 
 export const getFollowerInfo = async (username) => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/friends/?main_user=${username}`)
+        const response = await axios.get(`https://vast-tundra-28650.herokuapp.com/api/friends/?main_user=${username}`)
         const data = response.data
         return data
     } catch (err) {
@@ -32,7 +32,7 @@ export const postProfile = async (e) => {
         formData.append("profile_img", e.target.form[1].files[0]);
         formData.append("discription", e.target.form.description.value);
 
-        const response = await axios.post(`http://127.0.0.1:8000/api/profile/`, formData)
+        const response = await axios.post(`https://vast-tundra-28650.herokuapp.com/api/profile/`, formData)
         const data = response.data
         console.log(data)
         if (data.err)
