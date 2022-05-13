@@ -74,7 +74,6 @@ export const editProfile = async (e) => {
         }
         )
         const data = response.data
-        console.log(data)
         if (data.err)
         {throw Error(data.err)}
     } catch (err) {
@@ -96,7 +95,6 @@ export const editProfileImage = async (e) => {
         }
         )
         const data = response.data
-        console.log(data)
         if (data.err)
         {throw Error(data.err)}
     } catch (err) {
