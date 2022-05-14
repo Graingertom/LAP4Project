@@ -1,0 +1,14 @@
+{% extends "frontend/index.html" %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login">
+    </form>
+
+    <span class="helptext">
+        Don't have an account?
+        <a href="{% url 'signup' %}">Create an account!</a>
+    </span>
+{% endblock content %}
