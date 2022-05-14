@@ -4,16 +4,15 @@
 
 --------------------------------
 ##Useage
-
 ###Client
-1. cd to Bullhorn/fronend folder
-2. `npm install` to install all necessary dependencies
-3. `npm run dev` to start the react client
+- cd to Bullhorn/fronend folder
+- `npm install` to install all necessary dependencies
+- `npm run dev` to start the react client
 ###API
-1. cd to Bullhorn folder
-2. `pipenv shell` to enable pipenv
-3. `pipenv install` to install all the necessary dependencies
-4. `python manage.py runserver` to run our server and api
+- cd to Bullhorn folder
+- `pipenv shell` to enable pipenv
+- `pipenv install` to install all the necessary dependencies
+- `python manage.py runserver` to run our server and api
 
 ## API
 ### Available routes
