@@ -1,14 +1,14 @@
 # LAP4Project
 --------------------------------
-##Purpose Of The App
+## Purpose Of The App
 
 --------------------------------
-##Useage
-###Client
+## Useage
+### Client
 - cd to Bullhorn/fronend folder
 - `npm install` to install all necessary dependencies
 - `npm run dev` to start the react client
-###API
+### API
 - cd to Bullhorn folder
 - `pipenv shell` to enable pipenv
 - `pipenv install` to install all the necessary dependencies
