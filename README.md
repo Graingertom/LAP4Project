@@ -14,6 +14,7 @@
 - `pipenv install` to install all the necessary dependencies
 - `python manage.py runserver` to run our server and api
 
+-----------------------------------------------------
 ## API
 ### Available routes
 - /api/post/?query
