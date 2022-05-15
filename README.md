@@ -2,7 +2,7 @@
 --------------------------------
 ## Purpose Of The App
 
---------------------------------
+
 ## Useage
 ### Client
 - cd to Bullhorn/fronend folder
@@ -14,7 +14,7 @@
 - `pipenv install` to install all the necessary dependencies
 - `python manage.py runserver` to run our server and api
 
------------------------------------------------------
+
 ## API
 ### Available routes
 - /api/post/?query
@@ -23,7 +23,6 @@
 ### Query Example
 ?main_user=kelvin6118&display_name=User
 
-----------------------------------------------------
 ## Future Feature
 - Add Friends functionality and able to direct message
 - security in the backend
